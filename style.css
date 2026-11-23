@@ -3,7 +3,6 @@
     margin : 0px;
     box-sizing:border-box;
 }
-
 html,body{
     width:100%;
     height:140%;
@@ -480,23 +479,254 @@ body.ai-page #tabs .t button.ai-active {
 .ai-table td.vol-busy   { color: cadetblue;  font-weight: bold; }
 .ai-table td.ai-actions { white-space: nowrap; }
 
+/* ---------- small screens ---------- */
 @media (max-width: 700px) {
     body.ai-page .ai-box {
         width: auto;
         margin: 18px 12px 0 12px;
         padding: 18px 14px;
     }
-    body.ai-page #tabs {
-        overflow-x: auto;
-    }
-    body.ai-page #tabs .t button {
-        padding-left: 14px;
-        padding-right: 14px;
-        font-size: 15px;
-        white-space: nowrap;
-    }
     .ai-stat {
-
         width: calc(50% - 7px);
+    }
+}
+
+
+/* ==========================================================================
+   ===== MOBILE VIEW - CODE ADDED BY AI (phones and small tablets)     =====
+   ===== Works for ALL pages: index, emergency, requests, resources,   =====
+   ===== volunteers. Applies ONLY when the screen is 768px wide or     =====
+   ===== less, so the desktop design stays exactly as you made it.     =====
+   ===== (!important is used only where your HTML has inline style="") =====
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* ---- stop sideways scrolling / the big empty space ---- */
+    html,
+    body {
+        height: auto;
+        overflow-x: hidden;
+    }
+
+    /* ---- header ---- */
+    nav {
+        padding: 16px;
+    }
+    nav h2 {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    nav h4 {
+        font-size: 12px;
+        line-height: 18px;
+        padding-left: 0;
+    }
+
+    /* ---- tabs: wrap into rows so every tab is visible (no hidden scroll) ---- */
+    #tabs {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    #tabs .t {
+        flex: 1 1 33.33%;
+    }
+    #tabs .t a {
+        display: block;
+    }
+    #tabs .t button {
+        width: 100%;
+        padding: 13px 6px;
+        font-size: 15px;
+    }
+
+    /* ---- dashboard cards (index.html) ---- */
+    #mid {
+        width: auto;
+        height: auto;
+        margin: 16px 12px 0 12px;
+        padding: 16px 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    #mid h3 {
+        position: static;
+        width: 100%;
+        margin: 0 0 8px 8px;
+    }
+    #mid .bw {
+        width: calc(50% - 16px);
+        height: auto;
+        padding-bottom: 12px;
+    }
+    #mid .bw h6 {
+        margin-top: 6px;
+        line-height: 1.3;
+    }
+
+    /* ---- overall progress ---- */
+    #below_mid {
+        width: auto;
+        height: auto;
+        margin: 16px 12px 0 12px;
+        padding-bottom: 16px;
+    }
+    #below_mid h3 {
+        padding-left: 14px;
+    }
+    #below_mid h4 {
+        margin-left: 14px;
+    }
+    #below_mid form input {
+        width: calc(100% - 28px);
+        margin-left: 14px;
+    }
+
+    /* ---- latest requests list ---- */
+    #end {
+        width: auto;
+        height: auto;
+        margin: 16px 12px 0 12px;
+        padding-bottom: 12px;
+    }
+    #end #end_in {
+        padding: 12px;
+    }
+    #end #end_in .ends {
+        height: auto;
+        min-height: 40px;
+        padding: 6px 0;
+        font-size: 13px;
+    }
+    #end #end_in .ends > div {
+        flex: 1;
+        padding: 0 3px;
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+    #end #end_in .ends > div:first-child {
+        flex: 0 0 28px;
+    }
+
+    /* ---- report emergency form (emergency.html) ---- */
+    #mid2 {
+        width: auto;
+        height: auto;
+        margin: 16px 12px 0 12px;
+        padding-bottom: 20px;
+    }
+    #mid2 h3 {
+        margin-left: 20px;
+    }
+    #top {
+        padding-right: 20px !important;
+    }
+    #form-top,
+    #form-mid {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .form-top-in,
+    .form-mid-in {
+        width: 100%;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-bottom: 14px;
+    }
+    #mid2 input,
+    #mid2 select,
+    #mid2 textarea {
+        width: 100% !important;
+        max-width: 100%;
+        font-size: 16px;
+    }
+    #mid2 input,
+    #mid2 select {
+        height: 42px !important;
+    }
+    #form-last,
+    #bottom {
+        margin-right: 20px !important;
+    }
+    #f1 {
+        width: calc(100% - 40px);
+        margin: 8px 20px 0 20px !important;
+        padding: 16px !important;
+        font-size: 16px;
+    }
+
+    /* ---- requests / resources / volunteers tables: one card per row ---- */
+    .ai-table-wrap {
+        border: none;
+        border-radius: 0;
+        overflow-x: visible;
+    }
+    .ai-table {
+        min-width: 0;
+    }
+    .ai-table thead {
+        display: none;
+    }
+    .ai-table,
+    .ai-table tbody,
+    .ai-table tr,
+    .ai-table td {
+        display: block;
+        width: 100%;
+    }
+    .ai-table tbody tr {
+        margin-bottom: 12px;
+        padding: 6px 14px;
+        background-color: #182125;
+        border: 1px solid #253a40;
+        border-radius: 10px;
+    }
+    .ai-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+        padding: 9px 0;
+        text-align: right;
+    }
+    .ai-table td::before {
+        content: attr(data-label);
+        flex: 0 0 auto;
+        color: cadetblue;
+        font-weight: 600;
+        text-align: left;
+    }
+    .ai-table tbody tr:last-child td {
+        border-bottom: 1px solid #253a40;
+    }
+    .ai-table tbody tr td:last-child {
+        border-bottom: none;
+    }
+    .ai-table td.ai-actions {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+    .ai-table td.ai-actions::before {
+        display: none;
+    }
+
+    /* ---- footer ---- */
+    footer {
+        padding: 0 12px 20px 12px;
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+/* very small phones (360px and below) */
+@media (max-width: 400px) {
+    #tabs .t button {
+        font-size: 13.5px;
+        padding: 12px 4px;
+    }
+    #end #end_in .ends {
+        font-size: 12px;
     }
 }

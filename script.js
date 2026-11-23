@@ -402,3 +402,4 @@ document.addEventListener("DOMContentLoaded", function () {
     if ($("resourcesBody")) { initResources(); }
     if ($("volunteersBody")) { initVolunteers(); }
 });
+

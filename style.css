@@ -496,6 +496,7 @@ body.ai-page #tabs .t button.ai-active {
         white-space: nowrap;
     }
     .ai-stat {
+
         width: calc(50% - 7px);
     }
 }

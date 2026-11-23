@@ -396,7 +396,7 @@ function initVolunteers() {
 
 /* ---------------------------------------------------------------
    6. START: run only the part that belongs to the current page
-   --------------------------------------------------------------- */
+   --------------------------------------------------------------- */ 
 document.addEventListener("DOMContentLoaded", function () {
     if ($("requestsBody")) { initRequests(); }
     if ($("resourcesBody")) { initResources(); }

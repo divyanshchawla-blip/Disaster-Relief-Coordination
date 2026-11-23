@@ -535,7 +535,8 @@ body.ai-page #tabs .t button.ai-active {
     }
     #tabs .t button {
         width: 100%;
-        padding: 13px 6px;
+        height: 100px;
+        padding: 10px 10px;
         font-size: 15px;
     }
 

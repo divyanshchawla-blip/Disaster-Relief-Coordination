@@ -479,7 +479,6 @@ body.ai-page #tabs .t button.ai-active {
 .ai-table td.vol-busy   { color: cadetblue;  font-weight: bold; }
 .ai-table td.ai-actions { white-space: nowrap; }
 
-/* ---------- small screens ---------- */
 @media (max-width: 700px) {
     body.ai-page .ai-box {
         width: auto;
